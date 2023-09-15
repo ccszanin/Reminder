@@ -5,6 +5,6 @@ interface ButtonProps {
  onClick: () => void;
 }
 
-export  function Button({title, onClick}:ButtonProps) {
+export  function Button({title, onClick}: ButtonProps) {
 return <Container onClick={onClick}>{title}</Container>;
 }

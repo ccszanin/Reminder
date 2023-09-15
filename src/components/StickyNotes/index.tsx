@@ -1,15 +1,29 @@
-import { Container, Grid } from "./styles";
+import { For } from "million/react";
+import { useContext } from "react";
+import NotesContext from "../../hooks/notesContext";
+import { Container, Grid, NoteItem } from "./styles";
 
-export function StickyNotes(){
-  return <Container>
-    <div className="reminderTitle">
-      <h1>Lembretes -</h1>
-    </div>
-    <Grid>
-      <div>
-        <h2>Título</h2>
-        <p>Descrição</p>
+export function StickyNotes() {
+  const { notes } = useContext<any>(NotesContext);
+  return (
+    <Container>
+      <div className="reminderTitle">
+        <h1>Lembretes - {notes.length}</h1>
       </div>
-    </Grid>
-     </Container>
+      <Grid>
+        <div>
+        {
+          notes.map((note: any) => (
+          <NoteItem>
+            
+            <h2>{note.title}</h2>
+            <p>{note.description}</p>
+            
+          </NoteItem>
+          ))
+        }
+        </div>
+      </Grid>
+    </Container>
+  );
 }

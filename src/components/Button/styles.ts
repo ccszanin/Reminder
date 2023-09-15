@@ -4,7 +4,7 @@ export const Container = styled.button `
 display: flex;
 padding: 0.7rem 1.5rem;
 font-weight: bold;
-background-color: var(--purple-600);
+background-color: var(--purple-900);
 color: var(--font-white);
 border: none;
 border-radius: 0.2rem;
